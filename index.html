@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html ng-app="noteApp">
+<head>
+    <title>Note Making App</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="app.js"></script>
+</head>
+<body>
+    <div class="container" ng-controller="NoteController">
+        <h2>Note Making App</h2>
+        <input type="text" ng-model="newNote" placeholder="Add a new note">
+        <button ng-click="addNote()">Add Note</button>
+        <ul>
+            <li ng-repeat="note in notes">
+                <div class="note">{{ note.text }}
+                    <button class="edit-btn" ng-click="editNote($index)">Edit</button>
+                    <button class="delete-btn" ng-click="deleteNote($index)">Delete</button>
+                </div>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
